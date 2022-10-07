@@ -20,7 +20,7 @@ body {
 }
 
 .page-todo .priority.high {
-    background: #fffdfd;
+    background: #f29e9e;
     margin-bottom: 1px
 }
 
@@ -278,7 +278,7 @@ body {
 
     .page-todo task .time {
         display: inline-block;
-        float: right;
+
         width: 20%;
         padding: 10px 10px;
         font-size: 12px;
@@ -311,7 +311,7 @@ body {
 
     .page-todo .task .time {
         display: inline-block;
-        float: right;
+
         width: 25%;
         padding: 10px 10px;
         font-size: 10px;
@@ -375,7 +375,7 @@ body {
 
     .page-todo .task .time {
         display: inline-block;
-        float: right;
+
         width: 25%;
         padding: 10px 10px;
         font-size: 10px;

@@ -1,4 +1,4 @@
-{% extends 'base2.html' %}
+{% extends 'base.html' %}
 {% block content %}
 
 
@@ -30,7 +30,7 @@
                     <div class="title">{{ todo.title }}</div>
                     <span >Not Complete</span>
                     <form action="/priority/{{ todo.id }}">
-                        <button type="submit" class="submit" name="submitbtn" value="subm">Отложить</button>
+                        <button type="submit" class="submit" name="submitbtn" value="subm">Не важно</button>
                     </form>
                     <form action="/update/{{ todo.id }}">
                         <button type="submit" class="submit" name="submitbtn" value="subm">Выполнено</button>

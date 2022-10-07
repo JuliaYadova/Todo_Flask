@@ -1,12 +1,12 @@
-from flask import redirect, render_template, request, url_for, abort
+from flask import redirect, render_template, url_for
 
 from app import app, db
 from app.forms import AddForm
 
 from .models import Todo
 
+
 @app.route('/', methods=['get', 'post'])
-# @app.get('/')
 def home():
     todo_list = db.session.query(Todo).all()
     form = AddForm()
@@ -17,19 +17,6 @@ def home():
         db.session.commit()
         return redirect(url_for('home'))
     return render_template('item.html', todo_list=todo_list, form=form)
-
-
-# @app.post('/add')
-# def add():
-#     form = AddForm()
-#     if form.validate_on_submit():
-#         title = form.title.data
-#         new_todo = Todo(title=title, complete=False, priority=False)
-#         db.session.add(new_todo)
-#         db.session.commit()
-#         return redirect(url_for('home'))
-#     else:
-#         abort(406)
 
 
 @app.get('/update/<int:todo_id>')
