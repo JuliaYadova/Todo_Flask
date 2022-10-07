@@ -1,6 +1,8 @@
+import os
+
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-import os
+from flask_bootstrap import Bootstrap
 
 # создание экземпляра приложения
 app = Flask(__name__)
@@ -9,5 +11,7 @@ app.config.from_object(os.environ.get('FLASK_ENV')
 
 # инициализирует расширения
 db = SQLAlchemy(app)
+bootstrap = Bootstrap(app)
+
 
 from . import views

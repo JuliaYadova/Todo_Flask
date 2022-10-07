@@ -1,27 +1,49 @@
+from flask import redirect, render_template, request, url_for, abort
+
 from app import app, db
-from flask import render_template, request, redirect, url_for
+from app.forms import AddForm
+
 from .models import Todo
 
-
-@app.get('/')
+@app.route('/', methods=['get', 'post'])
+# @app.get('/')
 def home():
     todo_list = db.session.query(Todo).all()
-    return render_template('base.html', todo_list=todo_list)
+    form = AddForm()
+    if form.validate_on_submit():
+        title = form.title.data
+        new_todo = Todo(title=title, complete=False, priority=False)
+        db.session.add(new_todo)
+        db.session.commit()
+        return redirect(url_for('home'))
+    return render_template('item.html', todo_list=todo_list, form=form)
 
 
-@app.post('/add')
-def add():
-    title = request.form.get('title')
-    new_todo = Todo(title=title, complete=False)
-    db.session.add(new_todo)
-    db.session.commit()
-    return redirect(url_for('home'))
+# @app.post('/add')
+# def add():
+#     form = AddForm()
+#     if form.validate_on_submit():
+#         title = form.title.data
+#         new_todo = Todo(title=title, complete=False, priority=False)
+#         db.session.add(new_todo)
+#         db.session.commit()
+#         return redirect(url_for('home'))
+#     else:
+#         abort(406)
 
 
 @app.get('/update/<int:todo_id>')
 def update(todo_id):
     todo = db.session.query(Todo).filter(Todo.id == todo_id).first()
     todo.complete = not todo.complete
+    db.session.commit()
+    return redirect(url_for('home'))
+
+
+@app.get('/priority/<int:todo_id>')
+def priority(todo_id):
+    todo = db.session.query(Todo).filter(Todo.id == todo_id).first()
+    todo.priority = not todo.priority
     db.session.commit()
     return redirect(url_for('home'))
 
