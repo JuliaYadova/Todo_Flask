@@ -1,12 +1,13 @@
 
-<div id="header" align="center">
-  <img src=https://media.giphy.com/media/Wrlwh4k4Uz1o3imeZg/giphy.gif width="200"/>
+# Todo_Flask
+<div id="header" align="left">
+  <img src=https://media.giphy.com/media/Wrlwh4k4Uz1o3imeZg/giphy.gif width="100"/>
 </div>
 
-# Todo_Flask
+---
 ### Стек:
 
-<div>
+<div align="left">
   <img src="https://github.com/devicons/devicon/blob/master/icons/python/python-original-wordmark.svg" title="Python 3" alt="Python" width="40" height="40"/>&nbsp;
   <img src="https://github.com/devicons/devicon/blob/master/icons/flask/flask-original-wordmark.svg" title="Flask" alt="Flask" width="40" height="40"/>&nbsp;
   <img src="https://github.com/devicons/devicon/blob/master/icons/sqlite/sqlite-original-wordmark.svg" title="SQLite3" alt="SQLite3" width="40"   height="40"/>&nbsp;
@@ -14,10 +15,12 @@
   <img src="https://github.com/devicons/devicon/blob/master/icons/html5/html5-original.svg" title="HTML5" alt="HTML" width="40" height="40"/>&nbsp;
 </div>
 
----
+
 ## Описание проекта
-Сайт для создания списка дел. Возможна приоритезация задач выская/низкая.
----
+   Сайт для создания списка дел. Возможна приоритезация задач выская/низкая.
+
+
+
 ## Подготовка и запуск проекта
 
 1. Копирование репозитория
@@ -26,7 +29,8 @@
 2. Установка на локальную машину:
 
  + Зайдите в папку приложения (где расположен файл runner) и выполните команды:
-   По умолчания система машины Windows, для других систем команды утановки вируального окружения и другие могут незначительно отличаться.
+   
+   *По умолчания система машины Windows, для других систем команды уcтановки вируального окружения и другие могут незначительно отличаться.
    ```
     python -m venv venv
     source venv/Scripts/activate
@@ -35,7 +39,8 @@
 
    ```
  + Откройте указанный адрес в браузере:
-   Вывод в консоли с адресом выглядит так:
+   
+   *Вывод в консоли с адресом выглядит так:
    ```
    * Serving Flask app 'app'
    * Debug mode: on
@@ -46,9 +51,9 @@
    * Debugger is active!
    * Debugger PIN: 
    ```
- + Проект запущен:
+ + Проект запущен.
    
-### Инструкция по использованию
+## Инструкция по использованию
  + Для записи задачи необходимо в поле под текстом Tasks внести соотвествующую запись, далее нажать на плюс.
    По умолчанию приоритет ставится низкий для измения нажать на кнопку 'важно' или 'не важно', если нужно понизить приоритет.
 
