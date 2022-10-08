@@ -28,7 +28,7 @@
                 <div class="desc">
                     {% if todo.complete == False %}
                     <div class="title">{{ todo.title }}</div>
-                    <span >Not Complete</span>
+                    <span hidden=True>Not Complete</span>
                     <form action="/priority/{{ todo.id }}">
                         <button type="submit" class="submit" name="submitbtn" value="subm">Не важно</button>
                     </form>
@@ -37,7 +37,7 @@
                     </form>
                     {% else %}
                     <div class="title"><s>{{ todo.title }}</s></div>
-                    <span >Completed</span>
+                    <span hidden=True>Completed</span>
                     <form action="/delete/{{ todo.id }}">
                         <button type="submit" class="submit" name="submitbtn" value="subm">Удалить</button>
                     </form>
@@ -46,7 +46,7 @@
                     </form>
                     {% endif %}
                 </div>
-                <div class="time">
+                <div class="time" hidden=True>
                     <div class="date">Jun 1, 2012</div>
                     <div> 1 day</div>
                 </div >
@@ -58,7 +58,7 @@
                 <div class="desc">
                     {% if todo.complete == False %}
                     <div class="title">{{ todo.title }}</div>
-                    <span >Not Complete</span>
+                    <span hidden=True>Not Complete</span>
                     <form action="/priority/{{ todo.id }}">
                         <button type="submit" class="submit" name="submitbtn" value="subm">Важно!</button>
                     </form>
@@ -67,7 +67,7 @@
                     </form>
                     {% else %}
                     <div class="title"><s>{{ todo.title }}</s></div>
-                    <span >Completed</span>
+                    <span hidden=True>Completed</span>
                     <form action="/delete/{{ todo.id }}">
                         <button type="submit" class="submit" name="submitbtn" value="subm">Удалить</button>
                     </form>
@@ -77,7 +77,7 @@
                     {% endif %}
 
                 </div>
-                <div class="time">
+                <div class="time" hidden=True>
                     <div class="date">Jun 1, 2012</div>
                     <div> 1 day</div>
                 </div>

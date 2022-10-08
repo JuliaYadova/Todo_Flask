@@ -1,3 +1,8 @@
+""" Приложение Todo.
+    В данном файле инициализуется экземпляр приложения Flask,
+    а также  инициализируются расширения.
+    Указывается путь к настройкам среды и значение по умолчанию.
+"""
 import os
 
 from flask import Flask
@@ -13,5 +18,5 @@ app.config.from_object(os.environ.get('FLASK_ENV')
 db = SQLAlchemy(app)
 bootstrap = Bootstrap(app)
 
-
+# импортируются функции представления
 from . import views
